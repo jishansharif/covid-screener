@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from tkinter import *
 from tkinter import ttk     #styles
 from tkinter import messagebox
@@ -222,26 +223,26 @@ def see_data():
                             range2=4
                     if up_down==True: 
                             if range2<=len(check_done):
-                                    if (range2+2)>len(check_done):
-                                            x=(range2 +2)-len(check_done)
+                                    if (range2+1)>len(check_done):
+                                            x=(range2 +1)-len(check_done)
                                             for i in range(x):
                                                     new_row=["  ", "  ","  ","  ","  ","  "]
                                                     check_done.append(new_row)
                                             
-                                    range1+=2
-                                    range2+=2
+                                    range1+=1
+                                    range2+=1
                                     
                                     list1(range1,range2,check_done)
                                     
                             if range2<=len(check_not_done):
-                                    if (range2+2)>len(check_not_done):
-                                            x=(range2 +2)-len(check_not_done)
+                                    if (range2+1)>len(check_not_done):
+                                            x=(range2 +1)-len(check_not_done)
                                             for i in range(x):
                                                     new_row=["  ", "  ","  ","  ","  ","  "]
                                                     check_not_done.append(new_row)
                                             
-                                    range1+=2
-                                    range2+=2
+                                    range1+=1
+                                    range2+=1
                                     list2(range1,range2,check_not_done)
                             
                                             
@@ -256,7 +257,8 @@ def see_data():
                                   list2(0,4,check_not_done)
                           except IndexError:
                                   pass
-                    
+                          Button(admin_window,text="Go Back", command=restart_program,font=("Raleway",30),width=11,height=1, bg="#D8D8D8", fg="#800000").place(x=0,y=0)
+
             scroll(check_done,check_not_done," ")            
             def clear_warnings():
                     connection.commit()
@@ -264,6 +266,7 @@ def see_data():
                     cursor = connection.cursor()
                     cursor.execute(update)
                     connection.commit()
+                    
             Button(admin_window,text="Go Up", command=lambda: scroll(check_done,check_not_done,"up"),font=("Raleway",30), bg="#D8D8D8", fg="#800000").place(x=475,y=0)
             Button(admin_window,text="Down", command=lambda: scroll(check_done,check_not_done,True),font=("Raleway",30), bg="#D8D8D8", fg="#800000").place(x=325,y=0)
             Button(admin_window,text="Clear Warnings", command=clear_warnings,font=("Raleway",30), bg="#D8D8D8", fg="#800000").place(x=650,y=0)
@@ -398,8 +401,9 @@ if pass_==True:
 
         lbl2=Label(win3,text="Please click on your shift to confirm !",font=("Arial",30),bg="white")
         lbl2.place(x=180,y=200)
-        but=(Firstname + ' '+ Lastname+', '+ position+ ', Shift: '+ start_time+ ' To '+ end_time)
-        button4=Button(win3,text=(but), command=update_data,font=("Raleway",25), bg="#D8D8D8", fg="#800000").place(x=100,y=330)
+        Label(win3,text=(Firstname + ' '+ Lastname+ '\n'+ position),font=("Raleway",25), bg="white", fg="#800000").place(x=500,y=330, anchor="center")
+        but=('Shift: '+ start_time+ ' To '+ end_time)
+        button4=Button(win3,text=(but), command=update_data,font=("Raleway",25), bg="#D8D8D8", fg="#800000").place(x=285,y=480)
 
     except NameError:
         Label(win3,text="Nothing matches the barcode scanned,\n no shift for you today",font=("Arial",30),bg="white").place(x=180,y=270)
