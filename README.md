@@ -10,9 +10,8 @@ Our solution is essentially an employee-scanning self device that will automate 
 An automated device that consists of a temperature sensor module, a touchscreen monitor as well as a mini-computer to bridge it together (Raspberry Pi 4).
 
 # Accomplishments
-Accomplishments that we're proud of
 
-We are very proud of what we have accomplished, the device was brought to a Walmart store where we got feedback from the store manager. An important thing to consider is the device is relatively cheap and provides efficient work and is extremely reliable. Our product is very user friendly and intuitive. 
+The device was brought to a Walmart store where we got feedback from the store manager. An important thing to consider is the device is relatively cheap and provides efficient work and is extremely reliable. Our product is very user friendly and intuitive. 
 This strengthens our belief that we can really help small businesses, health departments during these unprecedented times.
 
 # Built with
